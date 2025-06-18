@@ -1,0 +1,38 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "amount": 120.0,
+      "transactionDate": "2025-04-10T10:00:00"
+    },
+    {
+      "id": 2,
+      "customerId": 1,
+      "amount": 80.0,
+      "transactionDate": "2025-05-05T14:00:00"
+    },
+    {
+      "id": 3,
+      "customerId": 2,
+      "amount": 200.0,
+      "transactionDate": "2025-06-20T16:00:00"
+    },
+    {
+      "id": 4,
+      "customerId": 2,
+      "amount": 50.0,
+      "transactionDate": "2025-04-15T12:00:00"
+    }
+  ]
+}
