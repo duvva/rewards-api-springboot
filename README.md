@@ -6,6 +6,23 @@ A simple Spring Boot REST API that calculates customer reward points based on tr
 - 2 points for every dollar spent over $100.
 - 1 point for every dollar spent between $50 and $100.
 
+## System Flow Diagram
+```mermaid
+flowchart TD
+    Start([Start: Client Request]) --> GetData[Load data.json]
+    GetData --> CheckEndpoint{Which API?}
+
+    CheckEndpoint -->|GET /api/rewards| Calculate[Calculate reward points]
+    Calculate --> BuildResponse[Build customer rewards response]
+    BuildResponse --> SendResponse[Return JSON Response]
+
+    CheckEndpoint -->|POST /api/rewards/customers| AddCustomer[Add new customer]
+    AddCustomer --> SaveData[Update data.json]
+    SaveData --> SendResponse
+
+    CheckEndpoint -->|POST /api/rewards/transactions| AddTransaction[Add new transaction]
+    AddTransaction --> SaveData
+```
 ## How to Run
 
 ### Prerequisites:
@@ -17,7 +34,7 @@ A simple Spring Boot REST API that calculates customer reward points based on tr
 ```bash
 mvn clean install
 mvn spring-boot:run
-```
+
 
 ### API Endpoint:
 
